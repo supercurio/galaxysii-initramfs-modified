@@ -831,6 +831,12 @@ service rtc_log /system/bin/sh /system/bin/rtc_log.sh
      user shell
      group shell
 
+service init_scripts /vendor/scripts/run_init_scripts.sh
+     oneshot
+
+service run_parts /vendor/scripts/run_parts.sh
+     oneshot
+
 on property:encryption.bootmode=remount
     stop tvout
     stop media
